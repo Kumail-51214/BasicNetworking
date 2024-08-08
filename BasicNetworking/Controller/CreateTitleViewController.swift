@@ -31,7 +31,7 @@ class CreateTitleViewController: UIViewController {
     }
     
     private func generateRandomId() -> Int {
-         Int.random(in: 30 ..< 200)
+        Int.random(in: 30 ..< 200)
     }
     
     @IBAction func textField(_ sender: Any) {
