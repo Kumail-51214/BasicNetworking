@@ -22,7 +22,6 @@ class CreateTitleViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         initUI()
-        generateRandomId()
     }
     
     private func initUI() {
@@ -60,7 +59,6 @@ class CreateTitleViewController: UIViewController {
                     let alert = AlertHelper.createAlertController(title: nil, message: post, actions: [alertAction])
                     self.present(alert, animated: true)
                 })
-                
             }
         }
         else {
