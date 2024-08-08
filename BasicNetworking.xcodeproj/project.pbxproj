@@ -23,6 +23,7 @@
 		33D77DCF2C63742F00C451AC /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D77DCE2C63742F00C451AC /* NetworkReachability.swift */; };
 		33D77DD32C64968C00C451AC /* CreateTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D77DD22C64968C00C451AC /* CreateTitleViewController.swift */; };
 		33D77DD52C6496A400C451AC /* CreateStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33D77DD42C6496A400C451AC /* CreateStoryboard.storyboard */; };
+		33D77DD82C64CFD400C451AC /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33D77DD62C64CFD400C451AC /* CoreData.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		33D77DCE2C63742F00C451AC /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
 		33D77DD22C64968C00C451AC /* CreateTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTitleViewController.swift; sourceTree = "<group>"; };
 		33D77DD42C6496A400C451AC /* CreateStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateStoryboard.storyboard; sourceTree = "<group>"; };
+		33D77DD72C64CFD400C451AC /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				330AC05C2C5A6358002EBAB8 /* Supporting Files */,
 				330AC0602C5A637E002EBAB8 /* LaunchScreen */,
 				330AC0562C5A6341002EBAB8 /* Info.plist */,
+				33D77DD92C64CFE400C451AC /* Database */,
 			);
 			path = BasicNetworking;
 			sourceTree = "<group>";
@@ -169,6 +172,14 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		33D77DD92C64CFE400C451AC /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				33D77DD62C64CFD400C451AC /* CoreData.xcdatamodeld */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -246,6 +257,7 @@
 				33D77DD32C64968C00C451AC /* CreateTitleViewController.swift in Sources */,
 				330AC0652C5B7023002EBAB8 /* ViewModel.swift in Sources */,
 				330AC04D2C5A633F002EBAB8 /* ViewController.swift in Sources */,
+				33D77DD82C64CFD400C451AC /* CoreData.xcdatamodeld in Sources */,
 				330AC0622C5B6FFB002EBAB8 /* DataModel.swift in Sources */,
 				335BDFBD2C60D43C00A7FF40 /* TableViewCell.swift in Sources */,
 				33D77DCD2C63594B00C451AC /* AlertHelper.swift in Sources */,
@@ -470,6 +482,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		33D77DD62C64CFD400C451AC /* CoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				33D77DD72C64CFD400C451AC /* CoreData.xcdatamodel */,
+			);
+			currentVersion = 33D77DD72C64CFD400C451AC /* CoreData.xcdatamodel */;
+			path = CoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 330AC03D2C5A633F002EBAB8 /* Project object */;
 }
