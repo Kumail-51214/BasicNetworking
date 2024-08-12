@@ -11,6 +11,8 @@ class ViewModel {
     let baseUrl = "https://dummy.codeduthu.com/products/"
     var reports: [DataModel] = []
     
+    
+    
     func getData(success: @escaping([DataModel]) -> Void, failure: @escaping(String) -> Void) {
         
         let session = URLSession.shared
@@ -79,6 +81,8 @@ class ViewModel {
         request.httpBody = jsonData
         
         let task = session.dataTask(with: request) { data, response, error in
+            
+            
             guard error == nil else {
                 print(error!)
                 completion(error?.localizedDescription ?? "something went wrong")
@@ -88,7 +92,10 @@ class ViewModel {
             if let httpResponse = response as? HTTPURLResponse {
                 completion(httpResponse.statusCode == 200 ? "Successfully Updated..." : "Something went Wrong")
             }
+            
+            
         }
+            
         task.resume()
     }
     

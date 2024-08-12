@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol UpdateCoreDataTitle {
+    func updateTitle(id:Int64, title:String)
+}
+
 class UpdateViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -18,6 +22,7 @@ class UpdateViewController: UIViewController {
     let viewModel = ViewModel()
     var updatedString: String?
     var report: DataModel?
+    var delegate:UpdateCoreDataTitle?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,14 +42,14 @@ class UpdateViewController: UIViewController {
         else {
             characterValidationLabel.isHidden = true
             saveBtn.backgroundColor = .systemBlue
-
+            
         }
     }
+    
+    @IBAction func saveBtn(_ sender: Any) {
         
-        @IBAction func saveBtn(_ sender: Any) {
-          
-            if textField.text?.isEmpty == false {
-                
+        if textField.text?.isEmpty == false {
+            
             loader.startAnimating()
             report?.title = "\(textField.text ?? "null")"
             viewModel.updateData(id: report?.id ?? 0, dataModel: DataModel(id: report?.id, stock: report?.stock ?? 12, price: report?.price ?? 14, title: report?.title ?? "", description:  report?.description ?? "", discountPercentage: report?.discountPercentage ?? 1.00, rating: report?.rating ?? 2.00, brand: report?.brand ?? "abc", category: report?.category ?? "Software", thumbnail: report?.thumbnail ?? "Engnr", images: report?.images ?? ["abcdef","kumail"])) { msg in
@@ -52,6 +57,7 @@ class UpdateViewController: UIViewController {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2.0 , execute: {
                     self.loader.stopAnimating()
                     let alertAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                        self.delegate?.updateTitle(id: Int64(self.report?.id ?? 999), title: self.report?.title ?? "mmm")
                         self.navigationController?.popViewController(animated: true)
                     }
                     let alert = AlertHelper.createAlertController(title: nil, message: msg, actions: [alertAction])
@@ -59,8 +65,8 @@ class UpdateViewController: UIViewController {
                 })
             }
         }
-            else {
-                characterValidationLabel.isHidden = false
-            }
+        else {
+            characterValidationLabel.isHidden = false
+        }
     }
 }
